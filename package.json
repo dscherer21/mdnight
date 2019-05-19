@@ -1,0 +1,31 @@
+{
+  "name": "mdnight",
+  "version": "1.0.0",
+  "description": "date night site that combines finding a movie and restaurants nearby.",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm start",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dscherer21/mdnight.git"
+  },
+  "keywords": [
+    "ReactJS",
+    "NodeJS",
+    "APIs",
+    "Geolocation"
+  ],
+  "author": "dscherer21",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dscherer21/mdnight/issues"
+  },
+  "homepage": "https://github.com/dscherer21/mdnight#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.0"
+  }
+}
