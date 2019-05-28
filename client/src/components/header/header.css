@@ -1,0 +1,10 @@
+.header{
+    background-color: maroon;
+    margin: 0;
+    width: 100%;
+}
+
+.hamburgermenu {
+    height: 80px;
+    width: auto;
+}
