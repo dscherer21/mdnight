@@ -1,28 +1,28 @@
 import React from "react";
 import './header.css';
-//import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 
 const Header = () => {
     return(
-      <header className='container header'>
-        <div className='row'>
-          <div className='col-sm-4'>
+      <Container className='header'>
+        <Row>
+          <Col id='hamburgermenu'>
             <Link to="#">
               <img className='hamburgermenu' src={require('./../../images/navbaricon.png')} alt='Hamburger Menu Icon'/>
             </Link>
-          </div>
+          </Col>
 
-          <div className='col-sm-4'>
+          <Col>
             <h1>MDNight</h1>
-          </div>
+          </Col>
 
-          <div className='col-sm-4'>
+          <Col>
             <p>Hello!</p>
-          </div>
-        </div>
-      </header>
+          </Col>
+        </Row>
+      </Container>
     )
 }
 

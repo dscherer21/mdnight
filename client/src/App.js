@@ -9,13 +9,13 @@ class App extends Component {
   render() {
     return (
       <Router>
-        
+        <div className='main'>
           <Header/>
 
             <Route exact path='/' component={LandingPage}/>
 
           <Footer/>
-        
+        </div>
       </Router>
     );
   }
