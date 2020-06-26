@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faBars } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import LandingPage from './components/landingPage';
 
 function App() {
   const[zipcode, setZipcode] = useState();
+  const[mainDisplay, setMainDisplay] = useState(
+    <LandingPage zipcode={zipcode} setZipcode={setZipcode} />
+  );
 
   useEffect(() => {
     axios({
@@ -37,25 +41,20 @@ function App() {
 
   return (
     <div className="App" path='/'>
-      <header>
-        <button>
-          <h1><FontAwesomeIcon icon={faBars} /></h1>
-        </button>
-        <h1>MDNight</h1>
-      </header>
-      <main>
-        <div>
-          <div>
-            Hello! <FontAwesomeIcon icon={faCoffee} />
-            <label htmlFor='zipcode'>Please Enter Your zipcode to get started!</label>
+      <header className='container'>
+        <div className='row'>
+          <div className='col-1'>
+            <button>
+              <h1><FontAwesomeIcon icon={faBars} /></h1>
+            </button>
           </div>
-          <div>
-            <input name='zipcode' type="text" pattern="[0-9]{5}" placeholder='ex. 12345' onChange={(e) => setZipcode(e.target.value)} />
+          <div className='col'>
+            <h1>MDNight</h1>
           </div>
         </div>
-        <button>Get Started!</button>
-      </main>
-      <footer>
+      </header>
+      {mainDisplay}
+      <footer className='container'>
         <h2>Copyright 2020</h2>
       </footer>
     </div>
