@@ -1,6 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function LandingPage(props) {
+    //const[injectZipcode, setInjectZipcode] = useState('');
+
+    /*useEffect(() => {
+        axios({
+          "method":"GET",
+          "url":"https://find-any-ip-address-or-domain-location-world-wide.p.rapidapi.com/iplocation",
+          "headers":{
+            "content-type":"application/octet-stream",
+            "x-rapidapi-host":"find-any-ip-address-or-domain-location-world-wide.p.rapidapi.com",
+            "x-rapidapi-key":"de1d479e2fmsh29b0dda09cdd472p18faf0jsn2a1266abd3dc",
+            "useQueryString":true
+          },
+          "params":{
+            "apikey":"873dbe322aea47f89dcf729dcc8f60e8"
+          }
+        })
+        .then((response)=>{
+          console.log(response);
+          props.setZipcode(response.data.zipCode);
+          //document.getElementById('zipcodeInput').value.concat(response.data.zipCode);
+        })
+        .catch((error)=>{
+          console.log(error)
+        });
+      },[]);*/
+
+      function handleInputChange(e) {
+        props.setZipcode(e.target.value);
+        
+      };
 
   return (
       <main className='container'>
@@ -13,12 +44,12 @@ function LandingPage(props) {
         </div>
         <div className='row'>
           <div className='col'>
-            <label htmlFor='zipcode'>Please Enter Your zipcode to get started!</label>
+            <label htmlFor='zipcodeInput'>Please Enter Your zipcode to get started!</label>
           </div>
         </div>
         <div className='row'>
           <div className='col'>
-            <input name='zipcode' type="text" pattern="[0-9]{5}" placeholder='ex. 12345' onChange={(e) => props.setZipcode(e.target.value)} value={props.zipcode} />
+            <input name='zipcodeInput' type="text" pattern='[0-9]{5}' required placeholder='ex. 12345' onChange={handleInputChange}  ref={props.zipcode} id='zipcodeInput' />
           </div>
         </div>
         <div className='row'>
